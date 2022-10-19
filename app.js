@@ -1,11 +1,15 @@
 import Ball from './ball.js'
 import Paddle from './paddle.js'
 
-const ball = new Ball(document.getElementById('ball'))
-const playerPaddle = new Paddle(document.getElementById('player-paddle'))
-const computerPaddle = new Paddle(document.getElementById('computer-paddle'))
+const paddleLeft = document.getElementById('player-paddle')
+const paddleRight = document.getElementById('computer-paddle')
+const ballElem = document.getElementById('ball')
 const playerScoreElem = document.getElementById('player-score')
 const computerScoreElem = document.getElementById('computer-score')
+
+const ball = new Ball(ballElem)
+const playerPaddle = new Paddle(paddleLeft)
+const computerPaddle = new Paddle(paddleRight)
 
 let lastTime
 const update = function (time) {
